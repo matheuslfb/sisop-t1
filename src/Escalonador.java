@@ -17,8 +17,5 @@ public class Escalonador {
         this.leitor = leitor;
     }
 
-    public void printTeste(){
 
-        System.out.print(leitor.getListaProcessos());
-    }
 }

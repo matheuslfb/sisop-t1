@@ -1,6 +1,5 @@
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -22,6 +21,9 @@ public class Leitor {
     }
 
     public List<Processo> getListaProcessos(){
+        for(Processo p : listaProcessos) {
+            System.out.println( p.toString());
+        }
         return listaProcessos;
     }
 
@@ -45,9 +47,6 @@ public class Leitor {
 
         return res;
     }
-
-
-
 
     public static Leitor readFile(String fileURL)throws IOException {
 

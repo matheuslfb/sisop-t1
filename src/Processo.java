@@ -16,6 +16,11 @@ public class Processo implements Comparable<Object> {
         private int tempoDeEspera = 0;
         private int tempoDeResposta = -1;
 
+
+        public int getId(){return this.id;}
+        public int getPrioridade(){
+            return this.prioridade;
+        }
     public Processo(int tempoDeChegada, int tempoDeExecucao, int prioridade, int id, List<Integer> inOut) {
         	this.id = id;
 		this.tempoDeChegada = tempoDeChegada;
@@ -43,5 +48,16 @@ public int getTempoDeChegada(){return tempoDeChegada;}
                 return p1.prioridade - p2.prioridade;
             }
         });
+    }
+
+    public String toString(){
+        return "Processo id= " + this.getId() +
+                "\nTempo de execução="+this.getTempoExecucao()+
+                "\nTempo de chegada:=" + this.getTempoDeChegada() +
+                "\nPrioridade=" + this.getPrioridade() + "\n";
+    }
+
+    public int getTempoExecucao() {
+        return this.tempoDeExecucao;
     }
 }
