@@ -48,58 +48,7 @@ public class Leitor {
         return res;
     }
 
-    public static Leitor readFile(String fileURL)throws IOException {
-
-        Leitor leitor;
-        String line;
-        int id = 1;
-        List<Integer> inOut = null;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(fileURL))) {
-            //LINHA 1: número de processos (ignorar)
-            int numeroDeProcesso = Integer.parseInt(br.readLine());
-
-            //LINHA 2: tamanho de fatia de tempo,
-            int fatiaDeTempo = Integer.parseInt(br.readLine());
-
-            leitor = new Leitor(fatiaDeTempo);
-
-            //lê as linhas restantes
-            //Para cada processo:
-            for (int j = 0; j < numeroDeProcesso; j++) {
-                inOut = null;
-
-                //read the line
-                line = br.readLine();
-
-                //split
-                String[] lineParts = line.split(" ");
-
-                //1 = tempo de chegada,
-                int tempoDeChegada = Integer.parseInt(lineParts[0]);
-
-                //2 = tempo de execução,
-                int tempoDeExecucao = Integer.parseInt(lineParts[1]);
-
-                //3 = prioridade (1 até 9 - prioridade 1 é o melhor)
-                int prioridade = Integer.parseInt(lineParts[2]);
-
-                //3? =  tempos de acesso a operações de E/S.
-                if (lineParts.length > 3) {
-                    inOut = new ArrayList<Integer>();
-
-                    for (int i = 3; i < lineParts.length; i++)
-                        inOut.add(Integer.parseInt(lineParts[i]));
-                }
-
-                leitor.addProcesso(
-                        new Processo(tempoDeChegada, tempoDeExecucao, prioridade, id++, inOut)
-                );
-            }
-
-        }
-        return leitor;
-    }
+    
 
     @Override
     public String toString() {

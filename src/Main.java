@@ -4,10 +4,12 @@ public class Main {
 
     public static void main(String[] args)throws IOException {
 
-        Leitor leitor = Leitor.readFile("H:\\sisop\\sisop-t1\\trab-so1-teste1 SR.txt");
-        Escalonador escalonador = new Escalonador(leitor);
+       
+        Escalonador esc = new Escalonador();
+        esc.readFile();
+        esc.ordenaOrdemChegada();
+        esc.getListaOrdenada();
 
-        leitor.getListaProcessos();
-
+       
     }
 }
