@@ -11,9 +11,7 @@ import java.util.Collections;
 public class Processo {
 
     private String id; //Identificação do processo
-    private int tempoDeChegada, tempoDeExecucao, prioridade, fatiaDeTempo, executedTime; //Dados de entrada. sliceTime é a partição e executedTime é quantos segundos o mesmo executou.
-    private boolean roundRobin = true; //Este boolean serve para permitir rodízio entre processo de mesma prioridade
-    private LinkedList<Integer> IOTimeList; //Lista de processos de Entrada/Saída (caso ele possua)
+    private int tempoDeChegada, tempoDeExecucao, prioridade, fatiaDeTempo, executedTime; 
 
     // Construtor
     public Processo(int fatiaDeTempo, int tempoDeChegada, int tempoDeExecucao, int prioridade){
@@ -82,31 +80,5 @@ public class Processo {
         }
         return false;
     }
-    
-    //Métodos essenciais para execução do Round Robin para que o rodízio seja feito efetivamente
-    
-    public void fillSlice(int n){
-        fatiaDeTempo = n;
-        setRR();
-    }
-    
-    public void reduceSlice(){
-        fatiaDeTempo--;
-    }
-    
-    public int getSlice(){
-        return fatiaDeTempo;
-    }
-    
-    private void setRR(){
-        roundRobin = false;
-    }
-    
-    public void desetRR(){
-        roundRobin = true;
-    }
-    
-    public boolean getRR(){
-        return roundRobin;
-    }
+   
 }
