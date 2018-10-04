@@ -3,7 +3,8 @@ import java.util.Collections;
 
 /**
  *
- * @author Gabriel Franzoni 15105090
+ * @author Matheus Lima Ferreira 122019482
+ * @author Geovane Paz
  */
  
  // Esta classe representa um processo de todos os de entrada. Todos os seus dados estão guardados aqui
@@ -15,11 +16,11 @@ public class Processo {
     private LinkedList<Integer> IOTimeList; //Lista de processos de Entrada/Saída (caso ele possua)
 
     // Construtor
-    public Processo(int sliceTime, int arrivalTime, int executionTime, int priority){
-    	this.fatiaDeTempo = sliceTime;
-    	this.tempoDeChegada = arrivalTime;
-    	this.tempoDeExecucao = executionTime;
-    	this.prioridade = priority;
+    public Processo(int fatiaDeTempo, int tempoDeChegada, int tempoDeExecucao, int prioridade){
+    	this.fatiaDeTempo = fatiaDeTempo;
+    	this.tempoDeChegada = tempoDeChegada;
+    	this.tempoDeExecucao = tempoDeExecucao;
+    	this.prioridade = prioridade;
         executedTime = 0;
     	IOTimeList = new LinkedList<>();
     }
@@ -48,7 +49,7 @@ public class Processo {
     
     //Métodos GET e SET (se necessário) de priority
     
-    public int getPriority(){
+    public int getPrioridade(){
         return prioridade;
     }
     
