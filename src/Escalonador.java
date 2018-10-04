@@ -14,15 +14,14 @@ public class Escalonador {
 	private Processo[] processos; // Lista de todos os processos
 	
 
-	private int fatiaDeTempo, nextArrival, execTime, recursionQuit, IOExecutionTime, restrict; // Dados.
+	private int fatiaDeTempo, nextArrival, execTime;
 																								// recursionQuit
 																								// e
 	
 	private LinkedList<Integer> procPorTempoDeChegada; // Lista de TODOS os
 														// tempos de chegada
 														// ordenados
-	private LinkedList<String> printProcess, printIO; // Gráficos para serem
-														// impressos no final
+	
 	private LinkedList<Processo> availableProcess, roundRobinEffect; // Listas
 																		// auxiliares
 																		// que
